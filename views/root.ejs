@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Odin Postgres</title>
+  </head>
+  <body>
+    <p>Usernames</p>
+    <% if (usernames) { %>
+    <ul>
+      <% usernames.forEach((user)=> {%>
+      <li><%=user.id%> - <%= user.username%>
+    
+        <form action="/delete" method="post">
+            <button name="userid" value=<%=user.id%> >Delete</button>
+        </form>
+        
+    </li>
+      <%})%>
+    </ul>
+    <%}%>
+    <a href="/new">Add User</a>
+  </body>
+</html>

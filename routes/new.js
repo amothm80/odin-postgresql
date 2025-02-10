@@ -1,15 +1,11 @@
-import express from 'express';
+import express from "express";
+import { createUsernamePost, createUsernameGet } from "../controllers/new.js";
 
 const router = express.Router();
+// router.set('view engine', 'ejs');
 
-router.get('/',(req,res)=>{
-    res.render('new')
+router.get("/", createUsernameGet);
 
-})
-
-router.post('/',(req,res)=>{
-    console.log("username to be saved: ", req.body.username)
-    res.end()
-})
+router.post("/", createUsernamePost);
 
 export default router;

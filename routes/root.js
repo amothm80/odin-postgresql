@@ -1,10 +1,8 @@
 import express from 'express';
+import { getUserNames } from '../controllers/root.js';
 
 const router = express.Router();
 
-router.get('/',(req,res)=>{
-    console.log("usernames will be logged here - wip")
-    res.end()
-})
+router.get('/',getUserNames)
 
 export default router;
